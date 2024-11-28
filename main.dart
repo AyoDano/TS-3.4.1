@@ -1,16 +1,11 @@
 void main() {
-  String header = "TICKET-INFO";
+  int ticketNummer = 47;
+  int reihe = (ticketNummer + 11) ~/ 12;
+  int platz = ticketNummer % 12 == 0 ? 12 : ticketNummer % 12;
+  int preis = (platz % 2 == 0) ? 15 : 12;
 
-  Map<String, String> ticketInfo = {
-    
-    "Reihe": "11.02.1988",
-    "Platz": "21.12.2000",
-    "Preis": "04.05.1978"
-  };
-
-   print(header);
-
-  ticketInfo.forEach((name, ticketInfo) {
-     print("$name: $ticketInfo");
-  });
+  print("TICKET-INFO");
+  print("Reihe: $reihe");
+  print("Platz: $platz");
+  print("Preis: ${preis}€");
 }
